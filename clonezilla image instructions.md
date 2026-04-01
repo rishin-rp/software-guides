@@ -1,16 +1,21 @@
-# Instructions
-## Overview
-- [Instructions](#instructions)
-	- [Overview](#overview)
-	- [Steps](#steps)
-		- [Create clonezilla bootable USB. (on your pc)](#create-clonezilla-bootable-usb-on-your-pc)
-		- [Transfer Image to External HDD (on your pc)](#transfer-image-to-external-hdd-on-your-pc)
-		- [Update the BIOS settings on the target PC.](#update-the-bios-settings-on-the-target-pc)
-		- [Recovering the generalized PC image to target PC.](#recovering-the-generalized-pc-image-to-target-pc)
-		- [Complete Windows setup on the target PC.](#complete-windows-setup-on-the-target-pc)
 
-## Steps
-### Create clonezilla bootable USB. (on your pc)
+- [Download Links](#download-links)
+  - [Images for Desktop / Laptop](#images-for-desktop--laptop)
+  - [Clonezilla bootable USB files](#clonezilla-bootable-usb-files)
+- [Steps](#steps)
+  - [Step 1: Create clonezilla bootable USB. (on your pc)](#step-1-create-clonezilla-bootable-usb-on-your-pc)
+  - [Step 2: Transfer Image to External HDD (on your pc)](#step-2-transfer-image-to-external-hdd-on-your-pc)
+  - [Step 3: Update the BIOS settings on the target PC.](#step-3-update-the-bios-settings-on-the-target-pc)
+  - [Step 4: Recovering the generalized PC image to target PC.](#step-4-recovering-the-generalized-pc-image-to-target-pc)
+  - [Step 5: Complete Windows setup on the target PC.](#step-5-complete-windows-setup-on-the-target-pc)
+
+### Download Links
+#### Images for Desktop / Laptop
+- [DELL-WIN11-25H2-FTV14-S5000V34-14MAR2026-img](https://veralto-my.sharepoint.com/:u:/r/personal/rishin_pandikadan_trojantechnologies_com/Documents/SCADA%20PC%20IMAGE/DELL-WIN11-25H2-FTV14-S5000V34-14MAR2026-img.7z?csf=1&web=1&e=O4JFpB)
+#### Clonezilla bootable USB files
+- [clonezilla-live-3.3.1-35-amd64](https://veralto-my.sharepoint.com/:u:/r/personal/rishin_pandikadan_trojantechnologies_com/Documents/SCADA%20PC%20IMAGE/clonezilla-live-3.3.1-35-amd64.zip?csf=1&web=1&e=Cy6LBC)
+### Steps
+#### Step 1: Create clonezilla bootable USB. (on your pc)
 1. Download the **clonezilla-live-3.3.1-35-amd64.zip** from shared one drive folder.
 2. Plug in a 4/8GB USB drive to your laptop
 3. Format the USB drive to fs type **FAT32**
@@ -19,13 +24,13 @@
 	![alt text](<_Images/Screenshot 2026-03-14 225013.png>)
 5. Now you have the bootable clonezilla USB ready! and you can Safely eject the USB drive.
 
-### Transfer Image to External HDD (on your pc)
+#### Step 2: Transfer Image to External HDD (on your pc)
 1. Download **DELL-WIN11-25H2-FTV14-S5000V34-14MAR2026-img** from one drive folder.
 2. Extract the zip file to your external HDD.
 	![alt text](_images/image.png)
 3. Eject and remove the HDD.
 
-### Update the BIOS settings on the target PC.
+#### Step 3: Update the BIOS settings on the target PC.
 Press F2 on Dell PC's during booting to enter the BIOS settings and update the following in the BIOS settings.
 1. Turn off secure boot
 	![](_images/Media%20(1).jpg)
@@ -33,7 +38,7 @@ Press F2 on Dell PC's during booting to enter the BIOS settings and update the f
 	![](_images/Media.jpg)
 3. Save changes and exit (Shutdown).
 
-### Recovering the generalized PC image to target PC.
+#### Step 4: Recovering the generalized PC image to target PC.
 1. Make sure the laptop/desktop is plugged in.
 2. Plug in the Clonezilla bootable USB drive.
 3. Turn on the Laptop.
@@ -78,7 +83,7 @@ Press F2 on Dell PC's during booting to enter the BIOS settings and update the f
 16. Wait for partclone to finish recovering the image to the drive. It may take about **5 minutes**. After it is finished please follow the on-screen prompts to power off the system.
    ![](_images/20260314_145642.jpg)
 
-### Complete Windows setup on the target PC.
+#### Step 5: Complete Windows setup on the target PC.
 1. Power on the computer. If it fails to boot, power off and power back on. Press the F12 key repeatedly to enter the one-time boot menu and select the nvme drive to which the image was written to.
 2. Follow first time boot setup on Windows.
 3. You do not need to connect the computer to internet until you reach the desktop. You will have the **I don't have internet** option to setup a local account.
