@@ -55,25 +55,25 @@
     <li>Download the <strong>clonezilla-live-3.3.1-35-amd64.zip</strong> from shared one drive folder.</li>
     <li>Plug in a 4/8GB USB drive to your laptop</li>
     <li>Format the USB drive to fs type <strong>FAT32</strong> </br>
-    <img src="file:///c:\Users\rpandikadan\Documents\RisProjects\software-guides\software-guides\_Images\Screenshot%202026-03-14%20225036.png" alt="alt text"></li>
+    <img src="https://github.com/rishin-rp/software-guides/blob/main/_Images/Screenshot%202026-03-14%20225036.png" alt="alt text"></li>
     <li>Extract <strong>clonezilla-live-3.3.1-35-amd64.zip</strong> to the USB drive. The base directory of the USB drive should look as shown below.
-    <img src="file:///c:\Users\rpandikadan\Documents\RisProjects\software-guides\software-guides\_Images\Screenshot%202026-03-14%20225013.png" alt="alt text"></li>
+    <img src="https://github.com/rishin-rp/software-guides/blob/main/_Images/Screenshot%202026-03-14%20225013.png" alt="alt text"></li>
     <li>Now you have the bootable clonezilla USB ready! and you can Safely eject the USB drive.</li>
     </ol>
     <h4 id="step-2-transfer-image-to-external-hdd-on-your-pc">Step 2: Transfer Image to External HDD (on your pc)</h4>
     <ol>
     <li>Download <strong>DELL-WIN11-25H2-FTV14-S5000V34-14MAR2026-img</strong> from one drive folder.</li>
     <li>Extract the zip file to your external HDD.
-    <img src="file:///c:\Users\rpandikadan\Documents\RisProjects\software-guides\software-guides\_images\image.png" alt="alt text"></li>
+    <img src="https://github.com/rishin-rp/software-guides/blob/main/_Images/image.png" alt="alt text"></li>
     <li>Eject and remove the HDD.</li>
     </ol>
     <h4 id="step-3-update-the-bios-settings-on-the-target-pc">Step 3: Update the BIOS settings on the target PC.</h4>
     <p>Press F2 on Dell PC's during booting to enter the BIOS settings and update the following in the BIOS settings.</p>
     <ol>
     <li>Turn off secure boot
-    <img src="file:///c:\Users\rpandikadan\Documents\RisProjects\software-guides\software-guides\_images\Media%20(1).jpg" alt=""></li>
+    <img src="https://github.com/rishin-rp/software-guides/blob/main/_Images/Media%20(1).jpg" alt=""></li>
     <li>Select AHCI/NvMe for storage driver.
-    <img src="file:///c:\Users\rpandikadan\Documents\RisProjects\software-guides\software-guides\_images\Media.jpg" alt=""></li>
+    <img src="https://github.com/rishin-rp/software-guides/blob/main/_Images/Media.jpg" alt=""></li>
     <li>Save changes and exit (Shutdown).</li>
     </ol>
     <h4 id="step-4-recovering-the-generalized-pc-image-to-target-pc">Step 4: Recovering the generalized PC image to target PC.</h4>
@@ -84,14 +84,14 @@
     <li>Press F12 repeatedly while boot up to bring up the one-time boot menu.</li>
     <li>Select UEFI USB from the list to boot into Clonezilla.</li>
     <li>Once GRUB is loaded select <strong>VGA 800X600 &amp; to RAM</strong> to load clonezilla to RAM.
-    <img src="file:///c:\Users\rpandikadan\Documents\RisProjects\software-guides\software-guides\_Images\20260314_145054.jpg" alt="alt text">
+    <img src="https://github.com/rishin-rp/software-guides/blob/main/_Images/20260314_145054.jpg" alt="alt text">
     This wll take up to a minute.</li>
     <li>Once it is loaded you will see the language selection menu. Use arrow keys to select and press enter to confirm.
-    <img src="file:///c:\Users\rpandikadan\Documents\RisProjects\software-guides\software-guides\_Images\20260314_145215.jpg" alt="">
-    <img src="file:///c:\Users\rpandikadan\Documents\RisProjects\software-guides\software-guides\_Images\20260314_145222.jpg" alt="">
-    <img src="file:///c:\Users\rpandikadan\Documents\RisProjects\software-guides\software-guides\_Images\20260314_145230.jpg" alt="">
-    <img src="file:///c:\Users\rpandikadan\Documents\RisProjects\software-guides\software-guides\_Images\20260314_145247.jpg" alt="">
-    <img src="file:///c:\Users\rpandikadan\Documents\RisProjects\software-guides\software-guides\_Images\20260314_145303.jpg" alt=""></li>
+    <img src="https://github.com/rishin-rp/software-guides/blob/main/_Images/20260314_145215.jpg" alt="">
+    <img src="https://github.com/rishin-rp/software-guides/blob/main/_Images/20260314_145222.jpg" alt="">
+    <img src="https://github.com/rishin-rp/software-guides/blob/main/_Images/20260314_145230.jpg" alt="">
+    <img src="https://github.com/rishin-rp/software-guides/blob/main/_Images/20260314_145247.jpg" alt="">
+    <img src="https://github.com/rishin-rp/software-guides/blob/main/_Images/20260314_145303.jpg" alt=""></li>
     <li>At this point plug in the <strong>External HDD</strong> with the image. Give it few seconds and you will see list of drives connected to the computer.
     <ol>
     <li>You should identify the nvme drive to recover the image to. (if there are multiple drives in the PC)</li>
@@ -100,33 +100,33 @@
     <ol>
     <li>nvme0n1</li>
     <li>sdb
-    <img src="file:///c:\Users\rpandikadan\Documents\RisProjects\software-guides\software-guides\_images\20260314_145327.jpg" alt=""></li>
+    <img src="https://github.com/rishin-rp/software-guides/blob/main/_Images/20260314_145327.jpg" alt=""></li>
     </ol>
     </li>
     </ol>
     </li>
     <li>Press <strong>Ctrl+C</strong> to proceed.</li>
     <li>When you are asked to mount a storage device, mount the external HDD.
-    <img src="file:///c:\Users\rpandikadan\Documents\RisProjects\software-guides\software-guides\_images\20260314_145350.jpg" alt="">
-    <img src="file:///c:\Users\rpandikadan\Documents\RisProjects\software-guides\software-guides\_images\20260314_145401.jpg" alt=""></li>
+    <img src="https://github.com/rishin-rp/software-guides/blob/main/_Images/20260314_145350.jpg" alt="">
+    <img src="https://github.com/rishin-rp/software-guides/blob/main/_Images/20260314_145401.jpg" alt=""></li>
     <li>When are asked to select the directory containing the image, use tab to select Done and press Enter. No need to change this since the folder containing the image is placed in the base directory.
-    <img src="file:///c:\Users\rpandikadan\Documents\RisProjects\software-guides\software-guides\_images\20260314_145413.jpg" alt=""></li>
+    <img src="https://github.com/rishin-rp/software-guides/blob/main/_Images/20260314_145413.jpg" alt=""></li>
     <li>Type <strong>n</strong> and press Enter when asked if you would like to synchronize time.
-    <img src="file:///c:\Users\rpandikadan\Documents\RisProjects\software-guides\software-guides\_images\20260314_145423.jpg" alt=""></li>
+    <img src="https://github.com/rishin-rp/software-guides/blob/main/_Images/20260314_145423.jpg" alt=""></li>
     <li>Select beginner mode and proceed
-    <img src="file:///c:\Users\rpandikadan\Documents\RisProjects\software-guides\software-guides\_images\20260314_145433.jpg" alt="">
-    <img src="file:///c:\Users\rpandikadan\Documents\RisProjects\software-guides\software-guides\_images\20260314_145444.jpg" alt="">
-    <img src="file:///c:\Users\rpandikadan\Documents\RisProjects\software-guides\software-guides\_images\20260314_145459.jpg" alt=""></li>
+    <img src="https://github.com/rishin-rp/software-guides/blob/main/_Images/20260314_145433.jpg" alt="">
+    <img src="https://github.com/rishin-rp/software-guides/blob/main/_Images/20260314_145444.jpg" alt="">
+    <img src="https://github.com/rishin-rp/software-guides/blob/main/_Images/20260314_145459.jpg" alt=""></li>
     <li>Select the correct nvme drive to restore the image to. <em>(#refer step 8)</em>
-    <img src="file:///c:\Users\rpandikadan\Documents\RisProjects\software-guides\software-guides\_images\20260314_145515(0).jpg" alt="">
-    <img src="file:///c:\Users\rpandikadan\Documents\RisProjects\software-guides\software-guides\_images\20260314_145524.jpg" alt="">
-    <img src="file:///c:\Users\rpandikadan\Documents\RisProjects\software-guides\software-guides\_images\20260314_145536.jpg" alt="">
-    <img src="file:///c:\Users\rpandikadan\Documents\RisProjects\software-guides\software-guides\_images\20260314_145545.jpg" alt="">
-    <img src="file:///c:\Users\rpandikadan\Documents\RisProjects\software-guides\software-guides\_images\20260314_145550.jpg" alt=""></li>
+    <img src="https://github.com/rishin-rp/software-guides/blob/main/_Images/20260314_145515(0).jpg" alt="">
+    <img src="https://github.com/rishin-rp/software-guides/blob/main/_Images/20260314_145524.jpg" alt="">
+    <img src="https://github.com/rishin-rp/software-guides/blob/main/_Images/20260314_145536.jpg" alt="">
+    <img src="https://github.com/rishin-rp/software-guides/blob/main/_Images/20260314_145545.jpg" alt="">
+    <img src="https://github.com/rishin-rp/software-guides/blob/main/_Images/20260314_145550.jpg" alt=""></li>
     <li>Press Enter to continue and when you are asked confirm overwriting the drive type <strong>y</strong> and press Enter. It amy ask you a couple of times.
-    <img src="file:///c:\Users\rpandikadan\Documents\RisProjects\software-guides\software-guides\_images\20260314_145605.jpg" alt=""></li>
+    <img src="https://github.com/rishin-rp/software-guides/blob/main/_Images/20260314_145605.jpg" alt=""></li>
     <li>Wait for partclone to finish recovering the image to the drive. It may take about <strong>5 minutes</strong>. After it is finished please follow the on-screen prompts to power off the system.
-    <img src="file:///c:\Users\rpandikadan\Documents\RisProjects\software-guides\software-guides\_images\20260314_145642.jpg" alt=""></li>
+    <img src="https://github.com/rishin-rp/software-guides/blob/main/_Images/20260314_145642.jpg" alt=""></li>
     </ol>
     <h4 id="step-5-complete-windows-setup-on-the-target-pc">Step 5: Complete Windows setup on the target PC.</h4>
     <ol>
