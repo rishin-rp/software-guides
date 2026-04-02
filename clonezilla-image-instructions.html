@@ -1,141 +1,318 @@
-
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Test</title>
+  <title>Clonezilla PC Image</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
-                font-size: 16px; line-height: 2.0; background-color: #86acc6; padding: 2rem; }
-    header { margin-bottom: 1rem; }
-    nav a { margin-right: 1rem; color: #0366d6; text-decoration: none; }
-    .card { border: 1px solid #e1e4e8; padding: 1rem; border-radius: 8px; max-width: 800px; margin: 0 auto; background-color: #d2d3ca; overflow: hidden; }
-      .card img, .card video { max-width: 100%; height: auto; display: block; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+      font-size: 16px;
+      line-height: 2.0;
+      background-color: rgb(39, 36, 36);
+      padding: 2rem;
+    }
+
+    header {
+      margin-bottom: 1rem;
+      margin-top: 0rem;
+      padding: 0.5rem 1rem;       /* smaller vertical padding */
+      line-height: 1.0;          /* tighter line spacing */
+      color: #e1e4e8;
+      background-color: rgb(39, 36, 36);
+    }
+
+    /* keep header at top and above content */
+    .site-header {
+      position: sticky; /* or position: fixed; */
+      top: 0;
+      z-index: 1000;              /* ensure it sits above content */
+      padding: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    }
+
+    /* if you used position: fixed, add top padding to main so content isn't hidden */
+    main {
+      padding-top: 4.5rem; /* adjust to header height if fixed */
+    }
+
+    nav a {
+      margin-right: 0rem;
+      color: #2b81e2;
+      text-decoration: none;
+    }
+
+    nav a.sep::after {
+      content: ">>"; /* arrow (or use "›", "→", "»", "•", etc.) */
+      margin: 0 1.0em;
+    }
+
+    .card {
+      border: 1px solid #e1e4e8;
+      padding: 1rem;
+      border-radius: 8px;
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #a0a08e;
+      overflow: hidden;
+      color: #000;
+    }
+
+    .card img,
+    .card video {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    th,
+    td {
+      border: 1px solid #e1e4e8;
+      padding: 0.5rem;
+      text-align: left;
+    }
+
+    th {
+      background-color: #4f5255;
+    }
   </style>
 </head>
+
 <body>
-  <header>
+  <header class="site-header">
     <h1>Software Guides</h1>
     <nav>
-      <a href="index.html">Home</a>
+      <a href="index.html" class="sep">Home</a>
+      <span class="current">Clonezilla PC Image Instructions</span>
     </nav>
   </header>
 
   <main class="card">
-    <h2>Test</h2>
+    <h2>Clonezilla PC Image Recovery Guide</h2>
     <ul>
-    <li><a href="#download-links">Download Links</a>
-    <ul>
-    <li><a href="#images-for-desktop--laptop">Images for Desktop / Laptop</a></li>
-    <li><a href="#clonezilla-bootable-usb-files">Clonezilla bootable USB files</a></li>
-    </ul>
-    <li><a href="#steps">Steps</a>
-    <ul>
-    <li><a href="#step-1-create-clonezilla-bootable-usb-on-your-pc">Step 1: Create clonezilla bootable USB. (on your pc)</a></li>
-    <li><a href="#step-2-transfer-image-to-external-hdd-on-your-pc">Step 2: Transfer Image to External HDD (on your pc)</a></li>
-    <li><a href="#step-3-update-the-bios-settings-on-the-target-pc">Step 3: Update the BIOS settings on the target PC.</a></li>
-    <li><a href="#step-4-recovering-the-generalized-pc-image-to-target-pc">Step 4: Recovering the generalized PC image to target PC.</a></li>
-    <li><a href="#step-5-complete-windows-setup-on-the-target-pc">Step 5: Complete Windows setup on the target PC.</a></li>
-    </ul>
-    </li>
+      <li><a href="#download-links">Download Links</a>
+        <ul>
+          <li><a href="#images-for-desktop--laptop">Images for Desktop / Laptop</a></li>
+          <li><a href="#clonezilla-bootable-usb-files">Clonezilla bootable USB files</a></li>
+        </ul>
+      <li><a href="#steps">Steps</a>
+        <ul>
+          <li><a href="#step-1-create-clonezilla-bootable-usb-on-your-pc">Step 1: Create clonezilla bootable USB. (on
+              your pc)</a></li>
+          <li><a href="#step-2-transfer-image-to-external-hdd-on-your-pc">Step 2: Transfer Image to External HDD (on
+              your pc)</a></li>
+          <li><a href="#step-3-update-the-bios-settings-on-the-target-pc">Step 3: Update the BIOS settings on the target
+              PC.</a></li>
+          <li><a href="#step-4-recovering-the-generalized-pc-image-to-target-pc">Step 4: Recovering the generalized PC
+              image to target PC.</a></li>
+          <li><a href="#step-5-complete-windows-setup-on-the-target-pc">Step 5: Complete Windows setup on the target
+              PC.</a></li>
+        </ul>
+      </li>
     </ul>
     <h3 id="download-links">Download Links</h3>
-    <h4 id="images-for-desktop--laptop">Images for Desktop / Laptop</h4>
-    <ul>
-    <li><a href="https://veralto-my.sharepoint.com/:u:/r/personal/rishin_pandikadan_trojantechnologies_com/Documents/SCADA%20PC%20IMAGE/DELL-WIN11-25H2-FTV14-S5000V34-14MAR2026-img.7z?csf=1&amp;web=1&amp;e=O4JFpB">DELL-WIN11-25H2-FTV14-S5000V34-14MAR2026-img</a></li>
-    </ul>
-    <h4 id="clonezilla-bootable-usb-files">Clonezilla bootable USB files</h4>
-    <ul>
-    <li><a href="https://veralto-my.sharepoint.com/:u:/r/personal/rishin_pandikadan_trojantechnologies_com/Documents/SCADA%20PC%20IMAGE/clonezilla-live-3.3.1-35-amd64.zip?csf=1&amp;web=1&amp;e=Cy6LBC">clonezilla-live-3.3.1-35-amd64</a></li>
-    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th>Clonezilla Bootable USB</th>
+          <th>Version</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a
+              href="https://veralto-my.sharepoint.com/:u:/r/personal/rishin_pandikadan_trojantechnologies_com/Documents/SCADA%20PC%20IMAGE/clonezilla-live-3.3.1-35-amd64.zip?csf=1&amp;web=1&amp;e=cZ9yiU">clonezilla-live-3.3.1-35-amd64.zip</a>
+          </td>
+          <td>3.3.1</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table>
+      <thead>
+        <tr>
+          <th>PC Image Backup</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a
+              href="https://veralto-my.sharepoint.com/:u:/r/personal/rishin_pandikadan_trojantechnologies_com/Documents/SCADA%20PC%20IMAGE/DELL-WIN11-25H2-FTV14-S5000V34-14MAR2026-img.7z?csf=1&amp;web=1&amp;e=5y9ILG">DELL-WIN11-25H2-FTV14-S5000V34-14MAR2026-img.7z</a>
+          </td>
+          <td>03/14/2026</td>
+        </tr>
+      </tbody>
+    </table>
     <h3 id="steps">Steps</h3>
     <h4 id="step-1-create-clonezilla-bootable-usb-on-your-pc">Step 1: Create clonezilla bootable USB. (on your pc)</h4>
     <ol>
-    <li>Download the <strong>clonezilla-live-3.3.1-35-amd64.zip</strong> from shared one drive folder.</li>
-    <li>Plug in a 4/8GB USB drive to your laptop</li>
-    <li>Format the USB drive to fs type <strong>FAT32</strong> </br>
-    <img src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/Screenshot%202026-03-14%20225036.png" alt="alt text"></li>
-    <li>Extract <strong>clonezilla-live-3.3.1-35-amd64.zip</strong> to the USB drive. The base directory of the USB drive should look as shown below.
-    <img src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/Screenshot%202026-03-14%20225013.png" alt="alt text"></li>
-    <li>Now you have the bootable clonezilla USB ready! and you can Safely eject the USB drive.</li>
+      <li>Download the <strong>clonezilla-live-3.3.1-35-amd64.zip</strong> from shared one drive folder.</li>
+      <li>Plug in a 4/8GB USB drive to your laptop</li>
+      <li>Format the USB drive to fs type <strong>FAT32</strong> </br>
+        <img
+          src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/Screenshot%202026-03-14%20225036.png"
+          alt="alt text">
+      </li>
+      <li>Extract <strong>clonezilla-live-3.3.1-35-amd64.zip</strong> to the USB drive. The base directory of the USB
+        drive should look as shown below.
+        <img
+          src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/Screenshot%202026-03-14%20225013.png"
+          alt="alt text">
+      </li>
+      <li>Now you have the bootable clonezilla USB ready! and you can Safely eject the USB drive.</li>
     </ol>
     <h4 id="step-2-transfer-image-to-external-hdd-on-your-pc">Step 2: Transfer Image to External HDD (on your pc)</h4>
     <ol>
-    <li>Download <strong>DELL-WIN11-25H2-FTV14-S5000V34-14MAR2026-img</strong> from one drive folder.</li>
-    <li>Extract the zip file to your external HDD.
-    <img src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/image.png" alt="alt text"></li>
-    <li>Eject and remove the HDD.</li>
+      <li>Download <strong>DELL-WIN11-25H2-FTV14-S5000V34-14MAR2026-img</strong> from one drive folder.</li>
+      <li>Extract the zip file to your external HDD.
+        <img src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/image.png"
+          alt="alt text">
+      </li>
+      <li>Eject and remove the HDD.</li>
     </ol>
     <h4 id="step-3-update-the-bios-settings-on-the-target-pc">Step 3: Update the BIOS settings on the target PC.</h4>
-    <p>Press F2 on Dell PC's during booting to enter the BIOS settings and update the following in the BIOS settings.</p>
+    <p>Press F2 on Dell PC's during booting to enter the BIOS settings and update the following in the BIOS settings.
+    </p>
     <ol>
-    <li>Turn off secure boot
-    <img src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/Media%20(1).jpg" alt=""></li>
-    <li>Select AHCI/NvMe for storage driver.
-    <img src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/Media.jpg" alt=""></li>
-    <li>Save changes and exit (Shutdown).</li>
+      <li>Turn off secure boot
+        <img src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/Media%20(1).jpg"
+          alt="">
+      </li>
+      <li>Select AHCI/NvMe for storage driver.
+        <img src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/Media.jpg" alt="">
+      </li>
+      <li>Save changes and exit (Shutdown).</li>
     </ol>
-    <h4 id="step-4-recovering-the-generalized-pc-image-to-target-pc">Step 4: Recovering the generalized PC image to target PC.</h4>
+    <h4 id="step-4-recovering-the-generalized-pc-image-to-target-pc">Step 4: Recovering the generalized PC image to
+      target PC.</h4>
     <ol>
-    <li>Make sure the laptop/desktop is plugged in.</li>
-    <li>Plug in the Clonezilla bootable USB drive.</li>
-    <li>Turn on the Laptop.</li>
-    <li>Press F12 repeatedly while boot up to bring up the one-time boot menu.</li>
-    <li>Select UEFI USB from the list to boot into Clonezilla.</li>
-    <li>Once GRUB is loaded select <strong>VGA 800X600 &amp; to RAM</strong> to load clonezilla to RAM.
-    <img src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145054.jpg" alt="alt text">
-    This wll take up to a minute.</li>
-    <li>Once it is loaded you will see the language selection menu. Use arrow keys to select and press enter to confirm.
-    <img src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145215.jpg" alt="">
-    <img src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145222.jpg" alt="">
-    <img src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145230.jpg" alt="">
-    <img src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145247.jpg" alt="">
-    <img src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145303.jpg" alt=""></li>
-    <li>At this point plug in the <strong>External HDD</strong> with the image. Give it few seconds and you will see list of drives connected to the computer.
-    <ol>
-    <li>You should identify the nvme drive to recover the image to. (if there are multiple drives in the PC)</li>
-    <li>Also the storage drive containing the image.</li>
-    <li>In this example they are
-    <ol>
-    <li>nvme0n1</li>
-    <li>sdb
-    <img src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145327.jpg" alt=""></li>
-    </ol>
-    </li>
-    </ol>
-    </li>
-    <li>Press <strong>Ctrl+C</strong> to proceed.</li>
-    <li>When you are asked to mount a storage device, mount the external HDD.
-    <img src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145350.jpg" alt="">
-    <img src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145401.jpg" alt=""></li>
-    <li>When are asked to select the directory containing the image, use tab to select Done and press Enter. No need to change this since the folder containing the image is placed in the base directory.
-    <img src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145413.jpg" alt=""></li>
-    <li>Type <strong>n</strong> and press Enter when asked if you would like to synchronize time.
-    <img src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145423.jpg" alt=""></li>
-    <li>Select beginner mode and proceed
-    <img src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145433.jpg" alt="">
-    <img src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145444.jpg" alt="">
-    <img src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145459.jpg" alt=""></li>
-    <li>Select the correct nvme drive to restore the image to. <em>(#refer step 8)</em>
-    <img src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145515(0).jpg" alt="">
-    <img src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145524.jpg" alt="">
-    <img src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145536.jpg" alt="">
-    <img src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145545.jpg" alt="">
-    <img src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145550.jpg" alt=""></li>
-    <li>Press Enter to continue and when you are asked confirm overwriting the drive type <strong>y</strong> and press Enter. It amy ask you a couple of times.
-    <img src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145605.jpg" alt=""></li>
-    <li>Wait for partclone to finish recovering the image to the drive. It may take about <strong>5 minutes</strong>. After it is finished please follow the on-screen prompts to power off the system.
-    <img src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145642.jpg" alt=""></li>
+      <li>Make sure the laptop/desktop is plugged in.</li>
+      <li>Plug in the Clonezilla bootable USB drive.</li>
+      <li>Turn on the Laptop.</li>
+      <li>Press F12 repeatedly while boot up to bring up the one-time boot menu.</li>
+      <li>Select UEFI USB from the list to boot into Clonezilla.</li>
+      <li>Once GRUB is loaded select <strong>VGA 800X600 &amp; to RAM</strong> to load clonezilla to RAM.
+        <img
+          src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145054.jpg"
+          alt="alt text">
+        This wll take up to a minute.
+      </li>
+      <li>Once it is loaded you will see the language selection menu. Use arrow keys to select and press enter to
+        confirm.
+        <img
+          src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145215.jpg"
+          alt="">
+        <img
+          src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145222.jpg"
+          alt="">
+        <img
+          src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145230.jpg"
+          alt="">
+        <img
+          src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145247.jpg"
+          alt="">
+        <img
+          src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145303.jpg"
+          alt="">
+      </li>
+      <li>At this point plug in the <strong>External HDD</strong> with the image. Give it few seconds and you will see
+        list of drives connected to the computer.
+        <ol>
+          <li>You should identify the nvme drive to recover the image to. (if there are multiple drives in the PC)</li>
+          <li>Also the storage drive containing the image.</li>
+          <li>In this example they are
+            <ol>
+              <li>nvme0n1</li>
+              <li>sdb
+                <img
+                  src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145327.jpg"
+                  alt="">
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+      <li>Press <strong>Ctrl+C</strong> to proceed.</li>
+      <li>When you are asked to mount a storage device, mount the external HDD.
+        <img
+          src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145350.jpg"
+          alt="">
+        <img
+          src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145401.jpg"
+          alt="">
+      </li>
+      <li>When are asked to select the directory containing the image, use tab to select Done and press Enter. No need
+        to change this since the folder containing the image is placed in the base directory.
+        <img
+          src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145413.jpg"
+          alt="">
+      </li>
+      <li>Type <strong>n</strong> and press Enter when asked if you would like to synchronize time.
+        <img
+          src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145423.jpg"
+          alt="">
+      </li>
+      <li>Select beginner mode and proceed
+        <img
+          src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145433.jpg"
+          alt="">
+        <img
+          src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145444.jpg"
+          alt="">
+        <img
+          src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145459.jpg"
+          alt="">
+      </li>
+      <li>Select the correct nvme drive to restore the image to. <em>(#refer step 8)</em>
+        <img
+          src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145515(0).jpg"
+          alt="">
+        <img
+          src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145524.jpg"
+          alt="">
+        <img
+          src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145536.jpg"
+          alt="">
+        <img
+          src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145545.jpg"
+          alt="">
+        <img
+          src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145550.jpg"
+          alt="">
+      </li>
+      <li>Press Enter to continue and when you are asked confirm overwriting the drive type <strong>y</strong> and press
+        Enter. It amy ask you a couple of times.
+        <img
+          src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145605.jpg"
+          alt="">
+      </li>
+      <li>Wait for partclone to finish recovering the image to the drive. It may take about <strong>5 minutes</strong>.
+        After it is finished please follow the on-screen prompts to power off the system.
+        <img
+          src="https://raw.githubusercontent.com/rishin-rp/software-guides/refs/heads/main/_Images/20260314_145642.jpg"
+          alt="">
+      </li>
     </ol>
     <h4 id="step-5-complete-windows-setup-on-the-target-pc">Step 5: Complete Windows setup on the target PC.</h4>
     <ol>
-    <li>Power on the computer. If it fails to boot, power off and power back on. Press the F12 key repeatedly to enter the one-time boot menu and select the nvme drive to which the image was written to.</li>
-    <li>Follow first time boot setup on Windows.</li>
-    <li>You do not need to connect the computer to internet until you reach the desktop. You will have the <strong>I don't have internet</strong> option to setup a local account.</li>
-    <li>Once the desktop is loaded, open the following file.
-    <code>C:\Users\Public\FATnotes.txt</code>
-    This document contains the instructions to complete the windows setup of the image. Important ones are <strong>renaming the PC</strong> and reconfiguring the <strong>factory talk directory</strong>.</li>
+      <li>Power on the computer. If it fails to boot, power off and power back on. Press the F12 key repeatedly to enter
+        the one-time boot menu and select the nvme drive to which the image was written to.</li>
+      <li>Follow first time boot setup on Windows.</li>
+      <li>You do not need to connect the computer to internet until you reach the desktop. You will have the <strong>I
+          don't have internet</strong> option to setup a local account.</li>
+      <li>Once the desktop is loaded, open the following file.
+        <code>C:\Users\Public\FATnotes.txt</code>
+        This document contains the instructions to complete the windows setup of the image. Important ones are
+        <strong>renaming the PC</strong> and reconfiguring the <strong>factory talk directory</strong>.
+      </li>
     </ol>
 
 
@@ -144,4 +321,5 @@
 
 
 </body>
+
 </html>

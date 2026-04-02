@@ -1,18 +1,90 @@
-
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Software Guides</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
-                font-size: 16px; line-height: 2.0; background-color: #86acc6; padding: 2rem; }
-    header { margin-bottom: 1rem; }
-    nav a { margin-right: 1rem; color: #0366d6; text-decoration: none; }
-    .card { border: 1px solid #e1e4e8; padding: 1rem; border-radius: 8px; max-width: 800px; margin: 0 auto; background-color: #d2d3ca; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+      font-size: 16px;
+      line-height: 2.0;
+      background-color: rgb(39, 36, 36);
+      padding: 2rem;
+    }
+
+    header {
+      margin-bottom: 1rem;
+      margin-top: 0rem;
+      padding: 0.5rem 1rem;       /* smaller vertical padding */
+      line-height: 1.0;          /* tighter line spacing */
+      color: #e1e4e8;
+      background-color: rgb(39, 36, 36);
+    }
+
+    /* keep header at top and above content */
+    .site-header {
+      position: sticky; /* or position: fixed; */
+      top: 0;
+      z-index: 1000;              /* ensure it sits above content */
+      padding: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    }
+
+    /* if you used position: fixed, add top padding to main so content isn't hidden */
+    main {
+      padding-top: 4.5rem; /* adjust to header height if fixed */
+    }
+
+    nav a {
+      margin-right: 0rem;
+      color: #2b81e2;
+      text-decoration: none;
+    }
+
+    nav a.sep::after {
+      content: ">>"; /* arrow (or use "›", "→", "»", "•", etc.) */
+      margin: 0 1.0em;
+    }
+
+    .card {
+      border: 1px solid #e1e4e8;
+      padding: 1rem;
+      border-radius: 8px;
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #a0a08e;
+      overflow: hidden;
+      color: #000;
+    }
+
+    .card img,
+    .card video {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    th,
+    td {
+      border: 1px solid #e1e4e8;
+      padding: 0.5rem;
+      text-align: left;
+    }
+
+    th {
+      background-color: #4f5255;
+    }
   </style>
 </head>
+
 <body>
   <header>
     <h1>Software Guides</h1>
@@ -29,4 +101,5 @@
 
 
 </body>
+
 </html>
